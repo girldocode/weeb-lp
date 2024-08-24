@@ -3,7 +3,6 @@ import { WButton } from "@/components/Lv1_Atoms";
 import Image from "next/image";
 import headline from "../../../../public/assets/svgviewer-output(6).svg";
 import underline from "../../../../public/assets/svgviewer-output(7).svg";
-import display from "../../../../public/assets/svgviewer-output(8).svg";
 import styles from "./Hero.module.scss";
 const Hero: React.FC = async () => {
   const data = await FetchHero();
@@ -54,7 +53,9 @@ const Hero: React.FC = async () => {
         </div>
         <div className={styles.heroImage}>
           <Image
-            src={display}
+            src={data.image}
+            width={500}
+            height={500}
             alt="display"
             style={{ width: "100%", height: "auto" }}
           />

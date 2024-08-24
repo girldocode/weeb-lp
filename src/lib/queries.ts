@@ -15,7 +15,7 @@ const _hero = `*[_type == "hero"]{
         content,
         cta1,
         cta2,
-        "imageUrl": image.asset->url
+        "image": image.asset->url
     }`;
 
 const _joinSection = `
