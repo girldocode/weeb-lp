@@ -1,0 +1,313 @@
+@use "./variables" as *;
+
+/* typography */
+// font size
+// font weight
+// line height
+// letter spacing
+// line clamp
+// text align
+// text decore
+// text transform
+// fluid sizing
+// font family
+// color
+//Font Style
+
+// font size & line-height
+@mixin font-size($size) {
+  font-size: $size;
+}
+@mixin line-height($height) {
+  line-height: $height;
+}
+
+$sizes: (
+  (xs, 0.75, 1),
+  // 12px
+  (sm, 0.875, 1.25),
+  // 14px
+  (base, 1, 1.5),
+  // 16px
+  (lg, 1.125, 1.75),
+  // 18px
+  (xl, 1.25, 1.75),
+  // 20px
+  (2xl, 1.5, 2),
+  // 24px
+  (3xl, 1.875, 2.25),
+  // 30px
+  (4xl, 2.25, 2.5),
+  // 36px
+  (5xl, 3, 1),
+  // 48px
+  (6xl, 3.75, 1),
+  // 60px
+  (7xl, 4.5, 1),
+  // 72px
+  (8xl, 6, 1),
+  // 96px
+  (9xl, 8, 1) // 128px
+);
+
+@each $n, $s, $l in $sizes {
+  $size: #{$s}rem;
+  $lh: #{$l}rem;
+
+  .font-#{$n} {
+    @include font-size($size);
+    @include line-height($lh);
+  }
+}
+
+// font weight
+@mixin font-weight($weight) {
+  font-weight: $weight;
+}
+
+$weight: (
+  (thin, 100),
+  (extralight, 200),
+  (light, 300),
+  (regular, 400),
+  (medium, 500),
+  (semibold, 600),
+  (bold, 700),
+  (extrabold, 800),
+  (black, 900)
+);
+
+@each $n, $w in $weight {
+  .font-#{$n} {
+    @include font-weight($w);
+  }
+}
+
+// letter spacing
+@mixin letter-spacing($spacing) {
+  letter-spacing: $spacing;
+}
+
+$letterSpacing: (
+  (tighter, -0.05),
+  (tight, -0.025),
+  (normal, 0),
+  (wide, 0.025),
+  (wider, 0.05),
+  (widest, 0.1)
+);
+
+@each $n, $s in $letterSpacing {
+  $ls: #{$s}em;
+  .tracking-#{$n} {
+    @include letter-spacing($ls);
+  }
+}
+
+// text align
+@mixin text-align($align) {
+  text-align: $align;
+}
+
+$textAlign: (
+  (left, left),
+  (center, center),
+  (right, right),
+  (justify, justify),
+  (start, start),
+  (end, end)
+);
+
+@each $n, $a in $textAlign {
+  .align-#{$n} {
+    @include text-align($a);
+  }
+}
+
+// text decor
+@mixin text-decoration($decoration) {
+  text-decoration: $decoration;
+}
+$textDecor: (
+  (none, none),
+  (underline, underline),
+  (overline, overline),
+  (line-through, line-through)
+);
+
+@each $n, $d in $textDecor {
+  .decor-#{$n} {
+    @include text-decoration($d);
+  }
+}
+
+// text transform
+@mixin text-transform($transform) {
+  text-transform: $transform;
+}
+$textTransform: (
+  (none, none),
+  (capitalize, capitalize),
+  (uppercase, uppercase),
+  (lowercase, lowercase)
+);
+
+@each $n, $t in $textTransform {
+  .transform-#{$n} {
+    @include text-transform($t);
+  }
+}
+
+// font family
+@mixin font-family($family) {
+  font-family: $family;
+}
+
+$fontFamily: (
+  (
+    sans,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    Roboto,
+    "Helvetica Neue",
+    Arial,
+    "Noto Sans",
+    sans-serif,
+    "Apple Color Emoji",
+    "Segoe UI Emoji",
+    "Segoe UI Symbol",
+    "Noto Color Emoji"
+  ),
+  (serif, ui-serif, Georgia, Cambria, "Times New Roman", Times, serif),
+  (
+    mono,
+    ui-monospace,
+    SFMono-Regular,
+    Menlo,
+    Monaco,
+    Consolas,
+    "Liberation Mono",
+    "Courier New",
+    monospace
+  )
+);
+
+@each $n, $f in $fontFamily {
+  .font-#{$n} {
+    @include font-family($f);
+  }
+}
+
+// Text color
+@mixin color($color) {
+  color: $color;
+}
+
+$colors: (
+  "blue-gray-900": $blue-gray-900,
+  "orange-600": $orange-600,
+  "white": $white,
+  "yellow-400": $yellow-400,
+  "blue-600": $blue-600,
+  "blue-100": $blue-100,
+  "blue-800": $blue-800,
+  "blue-gray-600": $blue-gray-600,
+  "purple-100": $purple-100,
+  "purple-800": $purple-800,
+  "green-100": $green-100,
+  "green-800": $green-800,
+  "orange-400": $orange-400,
+  "blue-gray-200": $blue-gray-200,
+  "blue-gray-700": $blue-gray-700,
+  "blue-gray-400": $blue-gray-400,
+  "blue-gray-100": $blue-gray-100,
+  "Purple-900": $purple-900,
+  "Purple-600": $purple-600,
+);
+
+@each $n, $v in $colors {
+  .font-#{$n} {
+    @include color($v);
+  }
+}
+
+//Font Style
+@mixin font-style($style) {
+  font-style: $style;
+}
+$fontStyle: ((normal, normal), (italic, italic));
+@each $n, $s in $fontStyle {
+  .font-#{$n} {
+    @include font-style($s);
+  }
+}
+
+//fluid sizing
+$clamp-values: (
+  (xs, (0.75rem, 2vw, 1rem)),
+  (sm, (0.875rem, 2vw, 1.25rem)),
+  (base, (1rem, 2vw, 1.5rem)),
+  (lg, (1.125rem, 2vw, 1.75rem)),
+  (xl, (1.25rem, 2vw, 2rem)),
+  (2xl, (1.5rem, 2vw, 2.5rem)),
+  (3xl, (1.875rem, 2vw, 3rem)),
+  (4xl, (2.25rem, 2vw, 3.5rem)),
+  (5xl, (3rem, 2vw, 4.5rem)),
+  (6xl, (3.75rem, 2vw, 6rem)),
+  (7xl, (4.5rem, 2vw, 7.5rem))
+);
+
+// _mixins.scss
+@mixin clamp($min, $preferred, $max) {
+  font-size: clamp(#{$min}, #{$preferred}, #{$max});
+}
+@each $size, $values in $clamp-values {
+  $min: nth($values, 1);
+  $preferred: nth($values, 2);
+  $max: nth($values, 3);
+
+  .fluid-text-#{$size} {
+    @include clamp($min, $preferred, $max);
+  }
+}
+
+// Vertical align
+
+@mixin vertical-align($align) {
+  vertical-align: $align;
+}
+
+$vertical-align: (
+  (baseline, baseline),
+  (sub, sub),
+  (super, super),
+  (top, top),
+  (text-top, text-top),
+  (middle, middle),
+  (bottom, bottom),
+  (text-bottom, text-bottom)
+);
+
+@each $n, $a in $vertical-align {
+  .vertical-align-#{$n} {
+    @include vertical-align($a);
+  }
+}
+
+//line clamp
+
+@mixin line-clamp($clamp) {
+  display: -webkit-box;
+  -webkit-line-clamp: $clamp;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+$lineClamp: ((1, 1), (2, 2), (3, 3), (4, 4), (5, 5), (6, 6), (none, none));
+
+@each $n, $c in $lineClamp {
+  .line-clamp-#{$n} {
+    @include line-clamp($c);
+  }
+}

@@ -1,0 +1,51 @@
+@mixin md {
+  @media (min-width: 768px) {
+    @content;
+  }
+}
+@mixin lg {
+  @media (min-width: 1024px) {
+    @content;
+  }
+}
+
+@mixin xl {
+  @media (min-width: 1440px) {
+    @content;
+  }
+}
+
+@mixin custom {
+  @media (min-width: 567px) {
+    @content;
+  }
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  @include xl {
+    justify-content: flex-start;
+    align-items: baseline;
+    text-align: left;
+  }
+  &__title {
+    font-size: clamp(2.5rem, 4vw, 3.5rem);
+    line-height: 44px;
+    color: white;
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+    font-weight: 800;
+    @include md {
+      line-height: 61.6px;
+      margin-top: 1rem;
+      margin-bottom: 2rem;
+    }
+    &__line {
+      position: relative;
+    }
+  }
+}

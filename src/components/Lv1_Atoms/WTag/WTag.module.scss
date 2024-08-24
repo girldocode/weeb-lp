@@ -1,0 +1,12 @@
+.tag {
+  &-w-purple {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: fit-content;
+    padding: 8px 16px;
+    border-radius: 4px;
+    background-color: #f3e8ff;
+    cursor: pointer;
+  }
+}

@@ -1,0 +1,13 @@
+export { default as Card } from "./Card/Card";
+export { default as Header } from "./Header/Header";
+export { default as Hero } from "./Hero/Hero";
+export { default as IconTextList } from "./IconTextList/IconTextList";
+export { default as IdeasSection } from "./IdeasSection/IdeasSection";
+export { default as JoinSection } from "./JoinSection/JoinSection";
+export { default as LowerFooter } from "./LowerFooter/LowerFooter";
+export { default as NextLevelRight } from "./NextLevelRight/NextLevelRight";
+export { default as TargetSection } from "./TargetSection/TargetSection";
+export { default as TestimonialCard } from "./TestimonialCard/TestimonialCard";
+export { default as ToolsSection } from "./ToolsSection/ToolsSection";
+export { default as UpperFooter } from "./UpperFooter/UpperFooter";
+export { default as WorkSection } from "./WorkSection/WorkSection";

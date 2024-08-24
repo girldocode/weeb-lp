@@ -1,0 +1,59 @@
+@mixin md {
+  @media (min-width: 768px) {
+    @content;
+  }
+}
+@mixin lg {
+  @media (min-width: 1024px) {
+    @content;
+  }
+}
+
+@mixin xl {
+  @media (min-width: 1440px) {
+    @content;
+  }
+}
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  border: 2px solid;
+  cursor: pointer;
+  padding: 0;
+
+  &--filled {
+    background-color: #9333ea;
+    color: #ffffff;
+    border-color: #9333ea;
+    font-size: clamp(20px, 2vw, 20px);
+    line-height: 24px;
+    width: 168px;
+    height: 56px;
+    padding: 16px;
+  }
+
+  &--sm {
+    background-color: #9333ea;
+    color: #ffffff;
+    border-color: #9333ea;
+    font-size: clamp(16px, 2vw, 16px);
+    line-height: 24px;
+    width: 127px;
+    height: 48px;
+    padding: 12px;
+  }
+
+  &--outlined {
+    background-color: #0f172a;
+    color: white;
+    border: 2px solid white;
+    font-size: clamp(20px, 2vw, 20px);
+    line-height: 24px;
+    width: 168px;
+    height: 56px;
+    padding: 16px;
+  }
+}

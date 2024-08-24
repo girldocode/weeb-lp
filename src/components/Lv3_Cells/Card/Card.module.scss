@@ -1,0 +1,40 @@
+@mixin md {
+  @media (min-width: 768px) {
+    @content;
+  }
+}
+@mixin lg {
+  @media (min-width: 1024px) {
+    @content;
+  }
+}
+
+@mixin xl {
+  @media (min-width: 1440px) {
+    @content;
+  }
+}
+
+@mixin custom {
+  @media (min-width: 567px) {
+    @content;
+  }
+}
+
+.card {
+  max-width: 500px;
+  &__container {
+    &__text {
+      margin-top: 1.5rem;
+      font-size: clamp(0.75rem, 1.5vw, 1rem);
+      line-height: 17.6px;
+    }
+    &__title {
+      font-size: clamp(1.5rem, 2vw, 2.5rem);
+      line-height: 26px;
+      @include lg {
+        line-height: 44px;
+      }
+    }
+  }
+}

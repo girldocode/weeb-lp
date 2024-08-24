@@ -1,0 +1,117 @@
+@mixin md {
+  @media (min-width: 768px) {
+    @content;
+  }
+}
+@mixin lg {
+  @media (min-width: 1024px) {
+    @content;
+  }
+}
+
+@mixin xl {
+  @media (min-width: 1440px) {
+    @content;
+  }
+}
+@mixin custom {
+  @media (min-width: 567px) {
+    @content;
+  }
+}
+
+.heroSection {
+  background-color: #0f172a;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 5rem;
+}
+
+.heroContent {
+  text-align: center;
+}
+
+.heroTitle {
+  color: #ffffff;
+  font-family: "Roboto", sans-serif;
+  font-weight: 800;
+  font-size: clamp(3.5rem, 4vw + 1rem, 4.5rem);
+  line-height: 61.6px;
+  margin: 0;
+  margin-bottom: 32px;
+
+  @include md {
+    line-height: 79.2px;
+  }
+
+  span {
+    display: inline-block;
+  }
+  .text {
+    margin-right: 0px;
+    margin-left: 18px;
+    position: relative;
+
+    @include custom {
+      margin-right: 18px;
+      margin-left: 18px;
+    }
+  }
+
+  .underline {
+    display: none;
+    @include md {
+      display: flex;
+      width: 100%;
+      height: auto;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+    }
+  }
+  .highlight {
+    color: #ffffff;
+    margin-right: 18px;
+    position: relative;
+    z-index: 0;
+  }
+  .headline {
+    position: absolute;
+    top: 9px;
+    left: 6px;
+    z-index: -1;
+    @include md {
+      top: 14px;
+      left: 6px;
+    }
+  }
+
+  .accent {
+    color: #9333ea;
+    margin-right: 18px;
+  }
+}
+
+.heroDescription {
+  color: #ffffff;
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  font-size: clamp(1rem, 1.5vw + 1rem, 1.125rem);
+  line-height: 22.2px;
+  margin: 5px 0;
+  @include md {
+    line-height: 28.8px;
+  }
+}
+
+.buttonGroup {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  margin-top: 2rem;
+}
+
+.heroImage {
+  margin-top: 5rem;
+}

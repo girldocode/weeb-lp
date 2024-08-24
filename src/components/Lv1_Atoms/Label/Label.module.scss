@@ -1,0 +1,29 @@
+@mixin md {
+  @media (min-width: 768px) {
+    @content;
+  }
+}
+@mixin lg {
+  @media (min-width: 1024px) {
+    @content;
+  }
+}
+
+@mixin xl {
+  @media (min-width: 1440px) {
+    @content;
+  }
+}
+.label {
+  text-align: center;
+  font-size: clamp(20px, 1.5vw, 20px);
+  line-height: 20px;
+  letter-spacing: 3px;
+  @include md {
+    text-align: left;
+    letter-spacing: 3px;
+  }
+  &__text {
+    letter-spacing: 3px;
+  }
+}

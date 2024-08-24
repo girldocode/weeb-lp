@@ -1,0 +1,44 @@
+@mixin md {
+  @media (min-width: 768px) {
+    @content;
+  }
+}
+
+@mixin lg {
+  @media (min-width: 1024px) {
+    @content;
+  }
+}
+
+@mixin xl {
+  @media (min-width: 1440px) {
+    @content;
+  }
+}
+
+.footer {
+  margin: 0 auto;
+
+  .content {
+    padding-top: 1.5625rem;
+    padding-bottom: 1.5625rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    justify-content: center;
+    align-items: center;
+    @include md {
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+    }
+  }
+
+  .text {
+  }
+
+  .socialIcons {
+    display: flex;
+    gap: 1rem;
+  }
+}

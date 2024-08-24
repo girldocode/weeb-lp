@@ -1,0 +1,54 @@
+.mobilemenu {
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  right: 0;
+  height: 100%;
+  width: 250px; // Adjust width as needed
+  background-color: white;
+  padding: 10px;
+  transition: transform 0.3s ease;
+  transform: translateX(100%);
+
+  &.show {
+    transform: translateX(0);
+  }
+
+  &.hide {
+    transform: translateX(100%);
+  }
+
+  &__closeButton {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    margin-bottom: 50px;
+  }
+
+  &__closeButtonIcon {
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    margin-top: 132px;
+    padding-right: 60px;
+
+    &__text {
+      display: flex;
+      flex-direction: column;
+      gap: 30px;
+      padding-left: 16px;
+      color: #0f172a;
+      font-size: 1.875rem;
+      font-weight: 600;
+      &__a {
+        text-decoration: none;
+        color: #0f172a;
+      }
+    }
+  }
+}

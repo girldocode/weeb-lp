@@ -1,0 +1,36 @@
+@mixin md {
+  @media (min-width: 768px) {
+    @content;
+  }
+}
+
+@mixin lg {
+  @media (min-width: 1024px) {
+    @content;
+  }
+}
+
+@mixin xl {
+  @media (min-width: 1440px) {
+    @content;
+  }
+}
+
+.cardList {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+  max-width: 320px;
+  margin-left: auto;
+  margin-right: auto;
+
+  @include lg {
+    max-width: 100%;
+  }
+
+  @include lg {
+    grid-template-columns: repeat(3, 1fr);
+    max-width: none;
+  }
+}

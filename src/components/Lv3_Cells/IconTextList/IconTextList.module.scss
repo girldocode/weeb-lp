@@ -1,0 +1,54 @@
+@mixin md {
+  @media (min-width: 768px) {
+    @content;
+  }
+}
+
+@mixin lg {
+  @media (min-width: 1024px) {
+    @content;
+  }
+}
+
+@mixin xl {
+  @media (min-width: 1440px) {
+    @content;
+  }
+}
+
+@mixin custom {
+  @media (min-width: 567px) {
+    @content;
+  }
+}
+
+.IconTextList {
+  display: grid;
+  gap: 2rem;
+
+  grid-template-columns: repeat(2, 1fr);
+
+  @include custom {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @include md {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+
+    &:last-child {
+      grid-column: 1 / -1;
+      justify-self: center;
+    }
+  }
+
+  @include lg {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 5rem;
+  }
+
+  @include xl {
+    grid-template-columns: repeat(5, 1fr);
+    gap: 5rem;
+  }
+}

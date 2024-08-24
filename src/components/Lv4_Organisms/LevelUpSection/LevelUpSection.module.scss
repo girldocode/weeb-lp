@@ -1,0 +1,62 @@
+@mixin md {
+  @media (min-width: 768px) {
+    @content;
+  }
+}
+@mixin lg {
+  @media (min-width: 1024px) {
+    @content;
+  }
+}
+
+@mixin xl {
+  @media (min-width: 1440px) {
+    @content;
+  }
+}
+
+@mixin custom {
+  @media (min-width: 567px) {
+    @content;
+  }
+}
+
+.LevelUpSection {
+  &__container {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+    background-color: #581c87;
+    padding: 3rem 1rem;
+    justify-content: center;
+    align-items: center;
+    @include xl {
+      grid-template-columns: repeat(3, 1fr);
+      align-items: start;
+      padding: 5rem;
+      gap: 5rem;
+    }
+
+    &__left {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      @include xl {
+        margin-top: 15rem;
+      }
+    }
+    &__right {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      @include xl {
+        margin-top: 16rem;
+      }
+    }
+    &__middle {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  }
+}

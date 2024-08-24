@@ -1,0 +1,8 @@
+.TestimonialCard {
+  &__text {
+    font-size: clamp(1rem, 1.5vw + 1rem, 1.125rem);
+    line-height: 28.8px;
+    color: white;
+    margin-bottom: 1rem;
+  }
+}
